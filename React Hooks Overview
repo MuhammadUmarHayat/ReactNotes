@@ -1,0 +1,74 @@
+### React Hooks Overview:
+
+#### 1. **useState Hook**:
+   - **Purpose**: Manages state in functional components.
+   - **Example**:
+     ```javascript
+     const [count, setCount] = useState(0);
+     ```
+
+#### 2. **useEffect Hook**:
+   - **Purpose**: Handles side effects like data fetching, subscriptions, or DOM manipulations.
+   - **Example**:
+     ```javascript
+     useEffect(() => {
+       document.title = `You clicked ${count} times`;
+     }, [count]);
+     ```
+
+#### 3. **useRef Hook**:
+   - **Purpose**: Persists a mutable reference across renders and accesses DOM elements directly.
+   - **Example**:
+     ```javascript
+     const inputRef = useRef(null);
+     ```
+
+#### 4. **useMemo Hook**:
+   - **Purpose**: Memoizes expensive calculations, optimizing performance.
+   - **Example**:
+     ```javascript
+     const computedValue = useMemo(() => heavyComputation(value), [value]);
+     ```
+
+#### 5. **useCallback Hook**:
+   - **Purpose**: Memoizes callback functions to prevent unnecessary re-renders.
+   - **Example**:
+     ```javascript
+     const memoizedCallback = useCallback(() => doSomething(a, b), [a, b]);
+     ```
+
+#### 6. **useContext Hook**:
+   - **Purpose**: Consumes values from a React context without passing props manually.
+   - **Example**:
+     ```javascript
+     const value = useContext(MyContext);
+     ```
+
+#### 7. **useReducer Hook**:
+   - **Purpose**: Manages complex state logic, similar to `useState` but with reducers.
+   - **Example**:
+     ```javascript
+     const [state, dispatch] = useReducer(reducer, initialState);
+     ```
+
+#### 8. **useLayoutEffect Hook**:
+   - **Purpose**: Similar to `useEffect`, but runs synchronously after all DOM mutations.
+   - **Example**:
+     ```javascript
+     useLayoutEffect(() => {
+       // DOM updates here
+     }, []);
+     ```
+
+#### 9. **Custom React Hook**:
+   - **Purpose**: Reuses stateful logic across components by creating custom hooks.
+   - **Example**:
+     ```javascript
+     function useCustomHook() {
+       const [state, setState] = useState(initialValue);
+       // Custom logic here
+       return [state, setState];
+     }
+     ```
+
+Each hook enhances the capabilities of functional components, enabling cleaner, more maintainable code by leveraging React's powerful abstractions.
